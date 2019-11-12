@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Inicio de Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-text color="light">
+      <h1><strong>Bienvenido!</strong></h1>
+      <p>Inicia sesión para hacer uso de todas las características.</p>
+    </ion-text>
+    <br />
+    <ion-text color="light">
+      <strong> Usuario</strong>
+    </ion-text>
+    <ion-input type="text" color="light" placeholder="pikachu21" [(ngModel)]="usuario.NombreUsuario"></ion-input>
+    <br/>
+    <ion-text color="light">
+      <strong>Contraseña</strong>
+    </ion-text>
+    <ion-input type="password" color="light" placeholder="•••••••••••" [(ngModel)]="usuario.Contra"></ion-input>
+    <br />
+    <ion-button expand="block" color="light" fill="solid" (click)="InicioSesion(usuario.NombreUsuario, usuario.Contra)">Iniciar Sesión</ion-button>
+  </ion-content>

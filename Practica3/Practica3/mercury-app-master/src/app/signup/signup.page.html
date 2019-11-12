@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Registro de Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-text color="light">
+    <h1><strong>Bienvenido!</strong></h1>
+    <p>Registrate para disfrutar de todas las caracteristicas.</p>
+  </ion-text>
+  <br />
+
+  <ion-text color="light">
+    <strong>Nombre(s)</strong>
+  </ion-text>
+  <ion-input type="text" [(ngModel)]='usuario.Nombre' name='nombreinput' color="light" placeholder="Alexander" ></ion-input>
+  <br/>
+        
+  <ion-text color="light">
+    <strong>Apellido(s)</strong>
+  </ion-text>
+  <ion-input type="text" [(ngModel)]='usuario.Apellido' name='nombreinput' color="light" placeholder="De la Fuente"></ion-input>
+  <br/>
+
+  <ion-text color="light">
+    <strong> Nombre Usuario</strong>
+  </ion-text>
+  <ion-input type="text" [(ngModel)]='usuario.NombreUsuario' name='nombreinput' color="light" placeholder="pikachu21@correo.com"></ion-input>
+  <br/>
+  <ion-text color="light">
+    <strong>Contraseña</strong>
+  </ion-text>
+  <ion-input type="password" [(ngModel)]='usuario.Contra' name='nombreinput' color="light" placeholder="•••••••••••"></ion-input>
+  <br />
+
+  <ion-button expand="block" color="light" fill="solid" (click)='saveNewUsuario()'>Registrar</ion-button><br />
+</ion-content>

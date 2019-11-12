@@ -1,0 +1,7 @@
+{
+  "name": "mercury-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

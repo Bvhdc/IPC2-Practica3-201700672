@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><strong>Bienvenido {{ active_user }}</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-text>
+    <ion-list>
+      <ion-list-header>
+        <ion-label>CONVERSACIONES RECIENTES</ion-label>
+      </ion-list-header>
+
+      <ion-item *ngFor="let chat of chats; let i = index" (click)="OpenMessage(chat)">
+        <ion-avatar>
+          <img [src]="">
+        </ion-avatar>
+        <ion-label>
+          <h2 id="contact_name" *ngIf="chat.UsuarioEnvio == active_user  ; else elseBlock">{{ chat.UsuarioReceptor }}</h2>
+          <ng-template #elseBlock>
+             <h2 id="contact_name2">{{ chat.UsuarioEnvio }}</h2>
+            </ng-template>
+          <ion-note></ion-note>
+        </ion-label>
+      </ion-item>
+
+    </ion-list>
+  </ion-text>
+</ion-content>

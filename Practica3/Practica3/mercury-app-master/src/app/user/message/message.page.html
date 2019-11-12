@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    
+    <ion-title>{{ contact }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let mensaje of mensajes" no-lines>
+      
+      
+        <div class="chat-message" text-right *ngIf="mensaje.UsuarioEnvio == completeUser.idUsuario">
+          <div class="right-bubble">
+            <span class="msg-name">Me</span>
+            <span class="msg-date"></span>
+            <p text-wrap>{{ mensaje.contenido }}</p>
+          </div>
+        </div>
+        <div class="chat-message" text-left *ngIf="mensaje.UsuarioEnvio != completeUser.idUsuario">
+          <div class="left-bubble">
+            <span class="msg-name"></span>
+            <span class="msg-date"></span>
+            <p text-wrap>{{ mensaje.contenido }}</p>
+          </div>
+        </div>
+     
+    </ion-item>
+  </ion-list>
+    
+  
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-input placeholder="Escribe tu mensaje..." [(ngModel)]="mensajenuevo.contenido" id="send_message"></ion-input>
+    <ion-button slot="end" shape="round" fill="clear" (click)="createMensajes()">Enviar</ion-button>
+  </ion-toolbar>
+</ion-footer>
